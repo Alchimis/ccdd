@@ -1,16 +1,15 @@
 import './NumberButton.css';
-import { IButtonContent } from './IButtonContent';
-import { type } from 'os';
+import { INumberButtonContent } from './features/interfaces/INumberButtonContent';
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { append } from './features/display/displaySlice';
 
-interface INumberButtonContent extends IButtonContent { 
-   buttonContent: string,
-   callbackFunction: ()=>void
-}
-
-function NumberButton({buttonContent, callbackFunction}:INumberButtonContent) { 
+function NumberButton({ content }: INumberButtonContent) { 
+   var dispatch = useDispatch()
+   var calback = useCallback(() => {dispatch(append(content))},[dispatch])
    return (
       <>
-         <button className='NumberButton' onClick={() => { console.log(buttonContent); callbackFunction()}}>{ buttonContent}</button>
+         <button className='NumberButton' onClick={() => { calback()}}>{content}</button>
       </>
    );
 }

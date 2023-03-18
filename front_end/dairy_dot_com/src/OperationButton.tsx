@@ -1,13 +1,13 @@
 import './OperationButton.css';
-import { IButtonContent } from "./IButtonContent";
+import { IOperationButtonContent } from "./features/interfaces/IOperationButtonContent"
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
-interface IOperationButtonData extends IButtonContent { 
-   buttonContent: string
-}
-
-function OperationButton({ buttonContent}:IOperationButtonData) { 
+function OperationButton({ operationType, content }: IOperationButtonContent) {
+   const dispatch = useDispatch() 
+   const callback = useCallback(() => { dispatch({type:operationType}) },[dispatch])
    return (<>
-      <button className="operationButton">{ buttonContent}</button>
+      <button onClick={()=>{callback()}} className="operationButton">{ content}</button>
    </>);
 }
 

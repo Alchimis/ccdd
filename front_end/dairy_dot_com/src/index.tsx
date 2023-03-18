@@ -25,7 +25,7 @@ for (var y in t) {
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Display/>
+      <ActualApp/>
     </Provider>
     
   </React.StrictMode>
@@ -36,7 +36,7 @@ root.render(
 <Row/>
 <Tet />
 <Counter/>
-
+<Display/>
 <ActualApp/>
 */
 // If you want to start measuring performance in your app, pass a function

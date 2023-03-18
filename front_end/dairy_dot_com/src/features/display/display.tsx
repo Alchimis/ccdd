@@ -9,34 +9,36 @@ export function Display() {
    const displayState = useSelector((state: RootState) => state.cool)
    const dispatch = useDispatch()
    const addCalback = useCallback(
-      () => dispatch({type:addAction.type}),
+      () => dispatch(addAction()),
       [dispatch]
    )
    const subCalback = useCallback(
-      () => dispatch({type:subAction.type}),
+      () => dispatch(subAction()),
       [dispatch]
    )
    const mulCalback = useCallback(
-      () => dispatch({type:mulAction.type}),
+      () => dispatch(mulAction()),
       [dispatch]
    )
    const divCalback = useCallback(
-      () => dispatch({type:divAction.type}),
+      () => dispatch(divAction()),
       [dispatch]
    )
    const appendCalback = useCallback(
-      () => dispatch({ type: append.type }),
+      () => dispatch(append("1")),
       [dispatch]
    )
    return (<>
       <div style={{ display: "block" }}>
          <p>{displayState.value}</p>
          <p>{displayState.bufValue}</p>
-         <NumberButton buttonContent='1' callbackFunction={()=>appendCalback()}/>
+        </div>      
+   </>);
+} /*
+ <NumberButton buttonContent='1' callbackFunction={()=>appendCalback()}/>
          <NumberButton callbackFunction={()=>addCalback()} buttonContent={"+"} />
          <NumberButton callbackFunction={()=>subCalback()} buttonContent={"-"} />
          <NumberButton callbackFunction={()=>mulCalback()} buttonContent={"*"} />
          <NumberButton callbackFunction={()=>divCalback()} buttonContent={"/"} />
-      </div>      
-   </>);
-}
+      
+   */

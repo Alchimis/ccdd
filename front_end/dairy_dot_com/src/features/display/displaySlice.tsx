@@ -52,6 +52,7 @@ export const newBufValueAction = createAction<string>('new/buf/var');
 export const append = createAction<string>('append');
 export const clearOne = createAction('clear/one');
 export const clearAll = createAction('clear/all');
+export const equalAcrion = createAction('equal');
 
 // вспомнил если жать на один знак много раз то там рекурси ябудет
 export const reducersCool = createReducer(discplayInitialState, (builder) => {
@@ -117,6 +118,8 @@ export const reducersCool = createReducer(discplayInitialState, (builder) => {
    }).addCase(clearAll, (state, action) => {
       state.bufValue = "";
       state.value = ""
+   }).addCase(equalAcrion, (state, action) => {
+      console.log("do nothing")
     })
       .addDefaultCase((state, action) => { console.log(action.type+"gg") })
 })
@@ -127,36 +130,7 @@ export const displaySlice = createSlice({
    initialState: discplayInitialState,
    reducers: {
       reducersCool
-  /* addDigit: (state,action:PayloadAction<string>) => { 
-         state.value += action.payload
-      },
-      deleteDigit: (state) => { 
-         if (state.value.length <= 0) { 
-            throw 4;
-         } 
-         state.value = state.value.slice(0,-1)
-      },
-      setValue: (state,action:PayloadAction<string>) => { 
-         state.value = action.payload
-      },
-      add: (state) => { 
-         if (state.bufValue == null) {
-            state.bufValue = "";
-         }
-
-
-      },
-*/
-
    }
 })
 
-/*
-смотри
-нам нужно держать два значения прошлое значение и текущее значение и операцию и отображаемое значение
-зачем нам держать отображаемое значение? за надом
-вапрос что будет происходить если значение в буфере и текущее значение есть, а м нажимаем отличающейся оператор
-
-смотри если следущее значение нуль, то мы меняем операцию
-*/
 export default displaySlice.reducer

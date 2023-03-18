@@ -1,13 +1,16 @@
 import './ControlButton.css';
-import { IButtonContent } from './IButtonContent';
+import { IControlButtonContent} from "./features/interfaces/IControlButtonContent"
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
-export interface IControlButtonContent extends IButtonContent{ 
-   buttonContent: string
-}
-
-function ControlButton({buttonContent }:IControlButtonContent) { 
+function ControlButton({ operationType, content }: IControlButtonContent) { 
+   const dispatch = useDispatch()
+   const callback = useCallback(
+      () => {dispatch({type:operationType}) },
+      [dispatch]
+   )
    return (<>
-      <button className='controlButton'>{ buttonContent}</button>
+      <button onClick={() => { callback() }} className='controlButton'>{ content}</button>
    </>);
 }
 
