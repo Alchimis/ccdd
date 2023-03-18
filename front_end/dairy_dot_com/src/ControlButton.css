@@ -1,0 +1,15 @@
+.controlButton{
+background-color: #b36135;
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   margin: 5px;
+}
+
+.controlButton:hover{
+background-color: #6e35b3;
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   border-color: #35b35d;
+}

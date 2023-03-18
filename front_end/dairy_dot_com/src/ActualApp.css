@@ -1,0 +1,6 @@
+.container{
+   display: block;
+   width: min-content;
+   height: max-content;
+   background-color: #000000;
+}

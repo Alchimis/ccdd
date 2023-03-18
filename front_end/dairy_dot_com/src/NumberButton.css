@@ -1,0 +1,14 @@
+.NumberButton{
+   background-color: #3572b3;
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   margin: 5px;
+}
+.NumberButton:hover{
+   background-color: #b3359c;
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;
+      border-color: #35b35d;
+}

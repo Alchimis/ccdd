@@ -1,0 +1,22 @@
+.calculatorscreen{
+   display: block;
+   background-color: #5c8d5c;
+   width: auto;
+   height: 50px;
+   border-radius: 4px;
+   border-color: #162116;
+   border-width: 3px;
+   margin: 5px;
+   text-align: right;
+}
+
+
+.calculator-data{
+   color: #000000;
+   margin: auto;
+   position: relative;
+   top: 10%;
+   font-size: 40px;
+   left: auto;
+   right: 5px;
+}

@@ -1,0 +1,15 @@
+.operationButton{
+background-color: #35b35b;
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   margin: 5px;
+}
+
+.operationButton:hover{
+background-color: #d6f702;
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   border-color: #35b35d;
+}

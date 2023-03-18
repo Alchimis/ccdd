@@ -1,0 +1,17 @@
+.wraper{
+   display: flex;
+      width: min-content;
+      height: min-content;}
+
+.item1 {
+   background-color: lime;
+   
+}
+
+.item2 {
+   background-color: yellow;
+}
+
+.item3 {
+   background-color: blue;
+}
